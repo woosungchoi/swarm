@@ -66,22 +66,22 @@ if [ "$1" == "setup" ]; then
   sudo chmod +x cashout.sh && sudo chmod +x cashout2.sh && sudo chmod +x cashout3.sh && sudo chmod +x cashout4.sh && sudo chmod +x cashout5.sh && sudo chmod +x cashout6.sh && sudo chmod +x cashout7.sh && sudo chmod +x cashout8.sh && sudo chmod +x cashout9.sh && sudo chmod +x cashout10.sh && sudo chmod +x cashout11.sh && sudo chmod +x cashout12.sh && sudo chmod +x cashout13.sh && sudo chmod +x cashout14.sh && sudo chmod +x cashout15.sh \
   && sudo chmod +x cashoutcron8.sh && sudo chmod +x cashoutcron10.sh && sudo chmod +x cashoutcron12.sh && sudo chmod +x cashoutcron15.sh \
   && if [ "$CASHOUT" == "y" ] && [ $NODE == "8" ]; then
-            && echo 'Preparing auto cashout' \
+            echo 'Preparing auto cashout' \
             && echo 'Configuring cron...' \
             && echo "30 6 * * * /root/swarm/cashoutcron8.sh >> /root/cashout.log 2>&1" >> mycron \
             && sudo crontab mycron; rm mycron
         elif [ "$CASHOUT" == "y" ] && [ $NODE == "10" ]; then
-            && echo 'Preparing auto cashout' \
+            echo 'Preparing auto cashout' \
             && echo 'Configuring cron...' \
             && echo "30 6 * * * /root/swarm/cashoutcron10.sh >> /root/cashout.log 2>&1" >> mycron \
             && sudo crontab mycron; rm mycron
         elif [ "$CASHOUT" == "y" ] && [ $NODE == "12" ]; then
-            && echo 'Preparing auto cashout' \
+            echo 'Preparing auto cashout' \
             && echo 'Configuring cron...' \
             && echo "30 6 * * * /root/swarm/cashoutcron12.sh >> /root/cashout.log 2>&1" >> mycron \
             && sudo crontab mycron; rm mycron
         else
-            && echo 'Preparing auto cashout' \
+            echo 'Preparing auto cashout' \
             && echo 'Configuring cron...' \
             && echo "30 6 * * * /root/swarm/cashoutcron15.sh >> /root/cashout.log 2>&1" >> mycron \
             && sudo crontab mycron; rm mycron
