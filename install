@@ -44,50 +44,50 @@ if [ "$1" == "setup" ]; then
         else echo 'Skip Installing Docker Compose'
      fi
   if [ "$NODE" == "8" ]; then
-        mkdir -p clef/01 node/01 clef/02 node/02 clef/03 node/03 clef/04 node/04 clef/05 node/05 clef/06 node/06 clef/07 node/07 clef/08 node/08 \
+        mkdir -p clef/01 node/01 clef/02 node/02 clef/03 node/03 clef/04 node/04 clef/05 node/05 clef/06 node/06 clef/07 node/07 clef/08 node/08
         elif [ "$NODE" == "10" ]; then
-        mkdir -p clef/01 node/01 clef/02 node/02 clef/03 node/03 clef/04 node/04 clef/05 node/05 clef/06 node/06 clef/07 node/07 clef/08 node/08 clef/09 node/09 clef/10 node/10 \
+        mkdir -p clef/01 node/01 clef/02 node/02 clef/03 node/03 clef/04 node/04 clef/05 node/05 clef/06 node/06 clef/07 node/07 clef/08 node/08 clef/09 node/09 clef/10 node/10
         elif [ "$NODE" == "12" ]; then
-        mkdir -p clef/01 node/01 clef/02 node/02 clef/03 node/03 clef/04 node/04 clef/05 node/05 clef/06 node/06 clef/07 node/07 clef/08 node/08 clef/09 node/09 clef/10 node/10 clef/11 node/11 clef/12 node/12 \
+        mkdir -p clef/01 node/01 clef/02 node/02 clef/03 node/03 clef/04 node/04 clef/05 node/05 clef/06 node/06 clef/07 node/07 clef/08 node/08 clef/09 node/09 clef/10 node/10 clef/11 node/11 clef/12 node/12
         else
-        mkdir -p clef/01 node/01 clef/02 node/02 clef/03 node/03 clef/04 node/04 clef/05 node/05 clef/06 node/06 clef/07 node/07 clef/08 node/08 clef/09 node/09 clef/10 node/10 clef/11 node/11 clef/12 node/12 clef/13 node/13 clef/14 node/14 clef/15 node/15 \
+        mkdir -p clef/01 node/01 clef/02 node/02 clef/03 node/03 clef/04 node/04 clef/05 node/05 clef/06 node/06 clef/07 node/07 clef/08 node/08 clef/09 node/09 clef/10 node/10 clef/11 node/11 clef/12 node/12 clef/13 node/13 clef/14 node/14 clef/15 node/15
      fi
   chmod -R 777 clef node \
   && echo 'Starting Swarm...' \
   && if [ "$NODE" == "8" ]; then
-        docker-compose up -d clef-1 clef-2 clef-3 clef-4  clef-5 clef-6 clef-7 clef-8 && docker-compose up -d node-1 node-2 node-3 node-4 node-5 node-6 node-7 node-8 \
+        docker-compose up -d clef-1 clef-2 clef-3 clef-4  clef-5 clef-6 clef-7 clef-8 && docker-compose up -d node-1 node-2 node-3 node-4 node-5 node-6 node-7 node-8
         elif [ "$NODE" == "10" ]; then
-        docker-compose up -d clef-1 clef-2 clef-3 clef-4  clef-5 clef-6 clef-7 clef-8 clef-9 clef-10 && docker-compose up -d node-1 node-2 node-3 node-4 node-5 node-6 node-7 node-8 node-9 node-10 \
+        docker-compose up -d clef-1 clef-2 clef-3 clef-4  clef-5 clef-6 clef-7 clef-8 clef-9 clef-10 && docker-compose up -d node-1 node-2 node-3 node-4 node-5 node-6 node-7 node-8 node-9 node-10
         elif [ "$NODE" == "12" ]; then
-        docker-compose up -d clef-1 clef-2 clef-3 clef-4  clef-5 clef-6 clef-7 clef-8 clef-9 clef-10 clef-11 clef-12 && docker-compose up -d node-1 node-2 node-3 node-4 node-5 node-6 node-7 node-8 node-9 node-10 node-11 node-12 \
+        docker-compose up -d clef-1 clef-2 clef-3 clef-4  clef-5 clef-6 clef-7 clef-8 clef-9 clef-10 clef-11 clef-12 && docker-compose up -d node-1 node-2 node-3 node-4 node-5 node-6 node-7 node-8 node-9 node-10 node-11 node-12
         else
-        docker-compose up -d clef-1 clef-2 clef-3 clef-4  clef-5 clef-6 clef-7 clef-8 clef-9 clef-10 clef-11 clef-12 clef-13 clef-14 clef-15 && docker-compose up -d node-1 node-2 node-3 node-4 node-5 node-6 node-7 node-8 node-9 node-10 node-11 node-12 node-13 node-14 node-15 \
+        docker-compose up -d clef-1 clef-2 clef-3 clef-4  clef-5 clef-6 clef-7 clef-8 clef-9 clef-10 clef-11 clef-12 clef-13 clef-14 clef-15 && docker-compose up -d node-1 node-2 node-3 node-4 node-5 node-6 node-7 node-8 node-9 node-10 node-11 node-12 node-13 node-14 node-15
      fi
-  sudo chmod +x cashout.sh && && sudo chmod +x cashout2.sh && sudo chmod +x cashout3.sh && sudo chmod +x cashout4.sh && sudo chmod +x cashout5.sh && sudo chmod +x cashout6.sh && sudo chmod +x cashout7.sh && sudo chmod +x cashout8.sh && sudo chmod +x cashout9.sh && sudo chmod +x cashout10.sh && sudo chmod +x cashout11.sh && sudo chmod +x cashout12.sh && sudo chmod +x cashout13.sh && sudo chmod +x cashout14.sh && sudo chmod +x cashout15.sh \
+  sudo chmod +x cashout.sh && && sudo chmod +x cashout2.sh && sudo chmod +x cashout3.sh && sudo chmod +x cashout4.sh && sudo chmod +x cashout5.sh && sudo chmod +x cashout6.sh && sudo chmod +x cashout7.sh && sudo chmod +x cashout8.sh && sudo chmod +x cashout9.sh && sudo chmod +x cashout10.sh && sudo chmod +x cashout11.sh && sudo chmod +x cashout12.sh && sudo chmod +x cashout13.sh && sudo chmod +x cashout14.sh && sudo chmod +x cashout15.sh
   && sudo chmod +x cashoutcron8.sh && sudo chmod +x cashoutcron10.sh && sudo chmod +x cashoutcron12.sh && sudo chmod +x cashoutcron15.sh \
   && if [ "$CASHOUT" == "y" ] && [ $NODE == "8" ]; then
             && echo 'Preparing auto cashout' \
             && echo 'Configuring cron...' \
             && echo "30 6 * * * /root/swarm/cashoutcron8.sh >> /root/cashout.log 2>&1" >> mycron \
-            && sudo crontab mycron; rm mycron \
+            && sudo crontab mycron; rm mycron
         elif [ "$CASHOUT" == "y" ] && [ $NODE == "10" ]; then
             && echo 'Preparing auto cashout' \
             && echo 'Configuring cron...' \
             && echo "30 6 * * * /root/swarm/cashoutcron10.sh >> /root/cashout.log 2>&1" >> mycron \
-            && sudo crontab mycron; rm mycron \
+            && sudo crontab mycron; rm mycron
         elif [ "$CASHOUT" == "y" ] && [ $NODE == "12" ]; then
             && echo 'Preparing auto cashout' \
             && echo 'Configuring cron...' \
             && echo "30 6 * * * /root/swarm/cashoutcron12.sh >> /root/cashout.log 2>&1" >> mycron \
-            && sudo crontab mycron; rm mycron \
+            && sudo crontab mycron; rm mycron
         else
             && echo 'Preparing auto cashout' \
             && echo 'Configuring cron...' \
             && echo "30 6 * * * /root/swarm/cashoutcron15.sh >> /root/cashout.log 2>&1" >> mycron \
-            && sudo crontab mycron; rm mycron \
+            && sudo crontab mycron; rm mycron
      fi
   echo 'Done! 🎉' \
   && echo 'by Woosung Choi' \
   && echo 'Below is a list of containers.'\
-  && sudo docker-compose ps \
+  && sudo docker-compose ps
 fi
