@@ -1,0 +1,282 @@
+version: "3"
+
+services:
+  clef-1:
+    container_name: clef-1
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - ./clef/01:/app/data
+    command: full
+
+  node-1:
+    container_name: node-1
+    image: ethersphere/bee:0.5.3
+    restart: unless-stopped
+    environment:
+      - BEE_API_ADDR=:1633
+      - BEE_P2P_ADDR=:1634
+      - BEE_NAT_ADDR=IP주소:1634
+      - BEE_DEBUG_API_ADDR=:1635
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-1:8550
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_PASSWORD=bee01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+      - BEE_WELCOME_MESSAGE=Hello from Korean Bees bzz bzz GGAZUA
+    ports:
+      - "${API_ADDR:-1633}${BEE_API_ADDR:-:1633}"
+      - "${P2P_ADDR:-1634}${BEE_P2P_ADDR:-:1634}"
+      - "${DEBUG_API_ADDR:-127.0.0.1:1635}${BEE_DEBUG_API_ADDR:-:1635}"
+    volumes:
+      - ./node/01:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-1
+
+  clef-2:
+    container_name: clef-2
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - ./clef/02:/app/data
+    command: full
+
+  node-2:
+    container_name: node-2
+    image: ethersphere/bee:0.5.3
+    restart: unless-stopped
+    environment:
+      - BEE_API_ADDR=:1733
+      - BEE_P2P_ADDR=:1734
+      - BEE_NAT_ADDR=IP주소:1734
+      - BEE_DEBUG_API_ADDR=:1735
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-2:8550
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_PASSWORD=bee01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+      - BEE_WELCOME_MESSAGE=Hello from Korean Bees bzz bzz GGAZUA
+    ports:
+      - "${API_ADDR:-1733}${BEE_API_ADDR:-:1733}"
+      - "${P2P_ADDR:-1734}${BEE_P2P_ADDR:-:1734}"
+      - "${DEBUG_API_ADDR:-127.0.0.1:1735}${BEE_DEBUG_API_ADDR:-:1735}"
+    volumes:
+      - ./node/02:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-2
+
+  clef-3:
+    container_name: clef-3
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - ./clef/03:/app/data
+    command: full
+
+  node-3:
+    container_name: node-3
+    image: ethersphere/bee:0.5.3
+    restart: unless-stopped
+    environment:
+      - BEE_API_ADDR=:1833
+      - BEE_P2P_ADDR=:1834
+      - BEE_NAT_ADDR=IP주소:1834
+      - BEE_DEBUG_API_ADDR=:1835
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-3:8550
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_PASSWORD=bee01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+      - BEE_WELCOME_MESSAGE=Hello from Korean Bees bzz bzz GGAZUA
+    ports:
+      - "${API_ADDR:-1833}${BEE_API_ADDR:-:1833}"
+      - "${P2P_ADDR:-1834}${BEE_P2P_ADDR:-:1834}"
+      - "${DEBUG_API_ADDR:-127.0.0.1:1835}${BEE_DEBUG_API_ADDR:-:1835}"
+    volumes:
+      - ./node/03:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-3
+
+  clef-4:
+    container_name: clef-4
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - ./clef/04:/app/data
+    command: full
+
+  node-4:
+    container_name: node-4
+    image: ethersphere/bee:0.5.3
+    restart: unless-stopped
+    environment:
+      - BEE_API_ADDR=:1933
+      - BEE_P2P_ADDR=:1934
+      - BEE_NAT_ADDR=IP주소:1934
+      - BEE_DEBUG_API_ADDR=:1935
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-4:8550
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_PASSWORD=bee01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+      - BEE_WELCOME_MESSAGE=Hello from Korean Bees bzz bzz GGAZUA
+    ports:
+      - "${API_ADDR:-1933}${BEE_API_ADDR:-:1933}"
+      - "${P2P_ADDR:-1934}${BEE_P2P_ADDR:-:1934}"
+      - "${DEBUG_API_ADDR:-127.0.0.1:1935}${BEE_DEBUG_API_ADDR:-:1935}"
+    volumes:
+      - ./node/04:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-4
+
+  clef-5:
+    container_name: clef-5
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - ./clef/05:/app/data
+    command: full
+
+  node-5:
+    container_name: node-5
+    image: ethersphere/bee:0.5.3
+    restart: unless-stopped
+    environment:
+      - BEE_API_ADDR=:2033
+      - BEE_P2P_ADDR=:2034
+      - BEE_NAT_ADDR=IP주소:2034
+      - BEE_DEBUG_API_ADDR=:2035
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-5:8550
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_PASSWORD=bee01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+      - BEE_WELCOME_MESSAGE=Hello from Korean Bees bzz bzz GGAZUA
+    ports:
+      - "${API_ADDR:-2033}${BEE_API_ADDR:-:2033}"
+      - "${P2P_ADDR:-2034}${BEE_P2P_ADDR:-:2034}"
+      - "${DEBUG_API_ADDR:-127.0.0.1:2035}${BEE_DEBUG_API_ADDR:-:2035}"
+    volumes:
+      - ./node/05:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-5
+
+  clef-6:
+    container_name: clef-6
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - ./clef/06:/app/data
+    command: full
+
+  node-6:
+    container_name: node-6
+    image: ethersphere/bee:0.5.3
+    restart: unless-stopped
+    environment:
+      - BEE_API_ADDR=:2133
+      - BEE_P2P_ADDR=:2134
+      - BEE_NAT_ADDR=IP주소:2134
+      - BEE_DEBUG_API_ADDR=:2135
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-6:8550
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_PASSWORD=bee01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+      - BEE_WELCOME_MESSAGE=Hello from Korean Bees bzz bzz GGAZUA
+    ports:
+      - "${API_ADDR:-2133}${BEE_API_ADDR:-:2133}"
+      - "${P2P_ADDR:-2134}${BEE_P2P_ADDR:-:2134}"
+      - "${DEBUG_API_ADDR:-127.0.0.1:2135}${BEE_DEBUG_API_ADDR:-:2135}"
+    volumes:
+      - ./node/06:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-6
+
+  clef-7:
+    container_name: clef-7
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - ./clef/07:/app/data
+    command: full
+
+  node-7:
+    container_name: node-7
+    image: ethersphere/bee:0.5.3
+    restart: unless-stopped
+    environment:
+      - BEE_API_ADDR=:2233
+      - BEE_P2P_ADDR=:2234
+      - BEE_NAT_ADDR=IP주소:2234
+      - BEE_DEBUG_API_ADDR=:2235
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-7:8550
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_PASSWORD=bee01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+      - BEE_WELCOME_MESSAGE=Hello from Korean Bees bzz bzz GGAZUA
+    ports:
+      - "${API_ADDR:-2233}${BEE_API_ADDR:-:2233}"
+      - "${P2P_ADDR:-2234}${BEE_P2P_ADDR:-:2234}"
+      - "${DEBUG_API_ADDR:-127.0.0.1:2235}${BEE_DEBUG_API_ADDR:-:2235}"
+    volumes:
+      - ./node/07:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-7
+
+  clef-8:
+    container_name: clef-8
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - ./clef/08:/app/data
+    command: full
+
+  node-8:
+    container_name: node-8
+    image: ethersphere/bee:0.5.3
+    restart: unless-stopped
+    environment:
+      - BEE_API_ADDR=:2333
+      - BEE_P2P_ADDR=:2334
+      - BEE_NAT_ADDR=IP주소:2334
+      - BEE_DEBUG_API_ADDR=:2335
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-8:8550
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_PASSWORD=bee01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+      - BEE_WELCOME_MESSAGE=Hello from Korean Bees bzz bzz GGAZUA
+    ports:
+      - "${API_ADDR:-2333}${BEE_API_ADDR:-:2333}"
+      - "${P2P_ADDR:-2334}${BEE_P2P_ADDR:-:2334}"
+      - "${DEBUG_API_ADDR:-127.0.0.1:2335}${BEE_DEBUG_API_ADDR:-:2335}"
+    volumes:
+      - ./node/08:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-8
