@@ -43,7 +43,7 @@ if [ "$1" == "setup" ]; then
         && sudo chmod +x /usr/local/bin/docker-compose
         else echo 'Skip Installing Docker Compose'
      fi
-  && if [ "$NODE" == "8" ]; then
+  if [ "$NODE" == "8" ]; then
         mkdir -p clef/01 node/01 clef/02 node/02 clef/03 node/03 clef/04 node/04 clef/05 node/05 clef/06 node/06 clef/07 node/07 clef/08 node/08 \
         elif [ "$NODE" == "10" ]; then
         mkdir -p clef/01 node/01 clef/02 node/02 clef/03 node/03 clef/04 node/04 clef/05 node/05 clef/06 node/06 clef/07 node/07 clef/08 node/08 clef/09 node/09 clef/10 node/10 \
