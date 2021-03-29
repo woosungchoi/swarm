@@ -86,7 +86,7 @@ if [ "$1" == "setup" ]; then
             && echo "30 6 * * * /root/swarm/cashoutcron15.sh >> /root/cashout.log 2>&1" >> mycron \
             && sudo crontab mycron; rm mycron \
      fi
-  && echo 'Done! 🎉' \
+  echo 'Done! 🎉' \
   && echo 'by Woosung Choi' \
   && echo 'Below is a list of containers.'\
   && sudo docker-compose ps \
