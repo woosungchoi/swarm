@@ -63,7 +63,7 @@ if [ "$1" == "setup" ]; then
         else
         docker-compose up -d clef-1 clef-2 clef-3 clef-4  clef-5 clef-6 clef-7 clef-8 clef-9 clef-10 clef-11 clef-12 clef-13 clef-14 clef-15 && docker-compose up -d node-1 node-2 node-3 node-4 node-5 node-6 node-7 node-8 node-9 node-10 node-11 node-12 node-13 node-14 node-15
      fi
-  sudo chmod +x cashout.sh && && sudo chmod +x cashout2.sh && sudo chmod +x cashout3.sh && sudo chmod +x cashout4.sh && sudo chmod +x cashout5.sh && sudo chmod +x cashout6.sh && sudo chmod +x cashout7.sh && sudo chmod +x cashout8.sh && sudo chmod +x cashout9.sh && sudo chmod +x cashout10.sh && sudo chmod +x cashout11.sh && sudo chmod +x cashout12.sh && sudo chmod +x cashout13.sh && sudo chmod +x cashout14.sh && sudo chmod +x cashout15.sh
+  sudo chmod +x cashout.sh && sudo chmod +x cashout2.sh && sudo chmod +x cashout3.sh && sudo chmod +x cashout4.sh && sudo chmod +x cashout5.sh && sudo chmod +x cashout6.sh && sudo chmod +x cashout7.sh && sudo chmod +x cashout8.sh && sudo chmod +x cashout9.sh && sudo chmod +x cashout10.sh && sudo chmod +x cashout11.sh && sudo chmod +x cashout12.sh && sudo chmod +x cashout13.sh && sudo chmod +x cashout14.sh && sudo chmod +x cashout15.sh
   && sudo chmod +x cashoutcron8.sh && sudo chmod +x cashoutcron10.sh && sudo chmod +x cashoutcron12.sh && sudo chmod +x cashoutcron15.sh \
   && if [ "$CASHOUT" == "y" ] && [ $NODE == "8" ]; then
             && echo 'Preparing auto cashout' \
