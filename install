@@ -27,7 +27,7 @@ if [ "$1" == "setup" ]; then
         else
         cp 15/docker-compose.yaml .
      fi
-  && sed -i "s/IP주소/"$(curl -s icanhazip.com)"/g" docker-compose.yaml \
+  sed -i "s/IP주소/"$(curl -s icanhazip.com)"/g" docker-compose.yaml \
   && echo 'Setting timezone to Asia/Seoul...' \
   && sudo timedatectl set-timezone Asia/Seoul \
   && echo 'Installing Docker...' \
