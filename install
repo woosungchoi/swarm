@@ -69,22 +69,22 @@ if [ "$1" == "setup" ]; then
   && if [ "$CASHOUT" == "y" ] && [ $NODE == "8" ]; then
             echo 'Preparing auto cashout' \
             && echo 'Configuring cron...' \
-            && echo "30 6 * * * /root/swarm/cashoutcron8.sh >> /root/cashout.log 2>&1" >> mycron \
+            && echo "30 6 * * * /root/swarm/cashoutcron8.sh >> /root/swarm/cashout.log 2>&1" >> mycron \
             && sudo crontab mycron; rm mycron
         elif [ "$CASHOUT" == "y" ] && [ $NODE == "10" ]; then
             echo 'Preparing auto cashout' \
             && echo 'Configuring cron...' \
-            && echo "30 6 * * * /root/swarm/cashoutcron10.sh >> /root/cashout.log 2>&1" >> mycron \
+            && echo "30 6 * * * /root/swarm/cashoutcron10.sh >> /root/swarm/cashout.log 2>&1" >> mycron \
             && sudo crontab mycron; rm mycron
         elif [ "$CASHOUT" == "y" ] && [ $NODE == "12" ]; then
             echo 'Preparing auto cashout' \
             && echo 'Configuring cron...' \
-            && echo "30 6 * * * /root/swarm/cashoutcron12.sh >> /root/cashout.log 2>&1" >> mycron \
+            && echo "30 6 * * * /root/swarm/cashoutcron12.sh >> /root/swarm/cashout.log 2>&1" >> mycron \
             && sudo crontab mycron; rm mycron
         else
             echo 'Preparing auto cashout' \
             && echo 'Configuring cron...' \
-            && echo "30 6 * * * /root/swarm/cashoutcron15.sh >> /root/cashout.log 2>&1" >> mycron \
+            && echo "30 6 * * * /root/swarm/cashoutcron15.sh >> /root/swarm/cashout.log 2>&1" >> mycron \
             && sudo crontab mycron; rm mycron
      fi
   echo 'Done! 🎉' \
