@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /mnt/data
+cd /root/swarm
 echo 'Start'
 timestamp=`date '+%Y-%m-%d %H:%M:%S'`
 echo $timestamp
