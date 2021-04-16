@@ -20,13 +20,13 @@ if [ "$1" == "setup" ]; then
   && sudo rm -rf swarm; git clone https://github.com/woosungchoi/swarm swarm \
   && cd swarm \
   && if [ "$NODE" == "8" ]; then
-        cp 8/docker-compose.yaml .
+        mv docker-compose.yaml.8 docker-compose.yaml
         elif [ "$NODE" == "10" ]; then
-        cp 10/docker-compose.yaml .
+        mv docker-compose.yaml.10 docker-compose.yaml
         elif [ "$NODE" == "12" ]; then
-        cp 12/docker-compose.yaml .
+        mv docker-compose.yaml.12 docker-compose.yaml
         elif [ "$NODE" == "15" ]; then
-        cp 15/docker-compose.yaml .
+        mv docker-compose.yaml.15 docker-compose.yaml
      fi
   sed -i "s/IP주소/"$(curl -s icanhazip.com)"/g" docker-compose.yaml \
   && echo 'Setting timezone to Asia/Seoul...' \
