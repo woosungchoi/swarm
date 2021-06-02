@@ -13,9 +13,10 @@ services:
 
   node-1:
     container_name: node-1
-    image: ethersphere/bee:0.5.3
+    image: ethersphere/bee:0.6.2
     restart: unless-stopped
     environment:
+      - BEE_FULL_NODE=true
       - BEE_API_ADDR=:1633
       - BEE_P2P_ADDR=:1634
       - BEE_NAT_ADDR=IP주소:1634
@@ -48,9 +49,10 @@ services:
 
   node-2:
     container_name: node-2
-    image: ethersphere/bee:0.5.3
+    image: ethersphere/bee:0.6.2
     restart: unless-stopped
     environment:
+      - BEE_FULL_NODE=true
       - BEE_API_ADDR=:1733
       - BEE_P2P_ADDR=:1734
       - BEE_NAT_ADDR=IP주소:1734
@@ -83,9 +85,10 @@ services:
 
   node-3:
     container_name: node-3
-    image: ethersphere/bee:0.5.3
+    image: ethersphere/bee:0.6.2
     restart: unless-stopped
     environment:
+      - BEE_FULL_NODE=true
       - BEE_API_ADDR=:1833
       - BEE_P2P_ADDR=:1834
       - BEE_NAT_ADDR=IP주소:1834
@@ -118,9 +121,10 @@ services:
 
   node-4:
     container_name: node-4
-    image: ethersphere/bee:0.5.3
+    image: ethersphere/bee:0.6.2
     restart: unless-stopped
     environment:
+      - BEE_FULL_NODE=true
       - BEE_API_ADDR=:1933
       - BEE_P2P_ADDR=:1934
       - BEE_NAT_ADDR=IP주소:1934
@@ -153,9 +157,10 @@ services:
 
   node-5:
     container_name: node-5
-    image: ethersphere/bee:0.5.3
+    image: ethersphere/bee:0.6.2
     restart: unless-stopped
     environment:
+      - BEE_FULL_NODE=true
       - BEE_API_ADDR=:2033
       - BEE_P2P_ADDR=:2034
       - BEE_NAT_ADDR=IP주소:2034
@@ -188,9 +193,10 @@ services:
 
   node-6:
     container_name: node-6
-    image: ethersphere/bee:0.5.3
+    image: ethersphere/bee:0.6.2
     restart: unless-stopped
     environment:
+      - BEE_FULL_NODE=true
       - BEE_API_ADDR=:2133
       - BEE_P2P_ADDR=:2134
       - BEE_NAT_ADDR=IP주소:2134
@@ -223,9 +229,10 @@ services:
 
   node-7:
     container_name: node-7
-    image: ethersphere/bee:0.5.3
+    image: ethersphere/bee:0.6.2
     restart: unless-stopped
     environment:
+      - BEE_FULL_NODE=true
       - BEE_API_ADDR=:2233
       - BEE_P2P_ADDR=:2234
       - BEE_NAT_ADDR=IP주소:2234
@@ -258,9 +265,10 @@ services:
 
   node-8:
     container_name: node-8
-    image: ethersphere/bee:0.5.3
+    image: ethersphere/bee:0.6.2
     restart: unless-stopped
     environment:
+      - BEE_FULL_NODE=true
       - BEE_API_ADDR=:2333
       - BEE_P2P_ADDR=:2334
       - BEE_NAT_ADDR=IP주소:2334
