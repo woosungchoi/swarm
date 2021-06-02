@@ -16,22 +16,22 @@ if [ "$1" == "setup" ]; then
   echo 'Setting system...' \
   && read -p "How many nodes do you want to run? (ex. 8, 10, 12, 15 ) : " NODE
   read -p "Do you want to apply automatic cashout? (ex. y or n ) : " CASHOUT \
+  && sudo apt update -y && sudo apt upgrade -y && sudo apt install curl git cron nano jq git -y && sudo apt autoremove -y \
   && sudo rm -rf swarm; git clone https://github.com/woosungchoi/swarm swarm \
   && cd swarm \
   && if [ "$NODE" == "8" ]; then
-        cp 8/docker-compose.yaml .
+        mv docker-compose.yaml.8 docker-compose.yaml
         elif [ "$NODE" == "10" ]; then
-        cp 10/docker-compose.yaml .
+        mv docker-compose.yaml.10 docker-compose.yaml
         elif [ "$NODE" == "12" ]; then
-        cp 12/docker-compose.yaml .
+        mv docker-compose.yaml.12 docker-compose.yaml
         elif [ "$NODE" == "15" ]; then
-        cp 15/docker-compose.yaml .
+        mv docker-compose.yaml.15 docker-compose.yaml
      fi
   sed -i "s/IP주소/"$(curl -s icanhazip.com)"/g" docker-compose.yaml \
   && echo 'Setting timezone to Asia/Seoul...' \
   && sudo timedatectl set-timezone Asia/Seoul \
   && echo 'Installing Docker...' \
-  && sudo apt update -y && sudo apt upgrade -y && sudo apt install curl git cron nano jq git -y && sudo apt autoremove -y \
   && sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y \
   && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - \
   && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" -y \
